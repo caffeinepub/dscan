@@ -1,0 +1,90 @@
+{
+  "kind": "implementation_plan",
+  "version": "1.0",
+  "title": "Add local file import option for documents",
+  "requirements": [
+    {
+      "id": "REQ-9",
+      "summary": "Add a file input component on the ScanPage that allows users to select image files from their local device (supporting common formats: JPEG, PNG, WebP)",
+      "acceptanceCriteria": [
+        "User can click a button or file input to open their device's file picker",
+        "Component accepts image files in JPEG, PNG, and WebP formats",
+        "Selected file is loaded and displayed in the scan workflow",
+        "File input is accessible from the main scanning interface"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/FileImport.tsx",
+          "operation": "create",
+          "description": "Create a new FileImport component that renders a file input accepting image/jpeg, image/png, and image/webp formats. Include a button styled consistently with DSCAN theme that triggers the file picker. Handle file selection by reading the file as a data URL and passing it to a callback prop. Display appropriate error messages for unsupported file types."
+        },
+        {
+          "path": "frontend/src/pages/ScanPage.tsx",
+          "operation": "modify",
+          "description": "Add state to track whether user is in camera capture mode or file import mode. Import and render the FileImport component alongside the existing CameraCapture component. When a file is imported, convert it to the same format that camera capture produces and transition to the ImageEditor step. Ensure the file import option is clearly visible and allows users to choose between camera and file input methods."
+        }
+      ]
+    },
+    {
+      "id": "REQ-10",
+      "summary": "Process locally imported image files through the same workflow as camera-captured images, including the ImageEditor step for corner detection and perspective correction",
+      "acceptanceCriteria": [
+        "Imported files are converted to a data URL or blob that can be passed to ImageEditor",
+        "Edge detection and perspective correction work on imported images",
+        "Users can adjust corner points for imported documents just like camera captures",
+        "Workflow transitions smoothly from file import to image editing"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/ScanPage.tsx",
+          "operation": "modify",
+          "description": "Update the handleFileImport callback to convert the selected File object to a data URL using FileReader. Pass this data URL to the ImageEditor component in the same way camera-captured images are passed. Ensure the workflow state transitions from 'capture' to 'edit' mode when a file is successfully imported, maintaining consistency with the camera capture flow."
+        },
+        {
+          "path": "frontend/src/components/ImageEditor.tsx",
+          "operation": "modify",
+          "description": "Verify that ImageEditor can receive image data URLs from both camera captures and file imports without modification. Ensure edge detection and corner adjustment functionality works regardless of image source. No changes should be needed if the component already handles data URLs generically."
+        }
+      ]
+    },
+    {
+      "id": "REQ-11",
+      "summary": "Update the ScanPage state management to handle both camera capture and file import as entry points into the document processing workflow",
+      "acceptanceCriteria": [
+        "ScanPage supports toggling between camera capture mode and file import mode",
+        "Both entry methods lead to the same subsequent steps (edit, enhance, collect)",
+        "State transitions are consistent regardless of image source",
+        "Users can switch between capture methods without losing their document collection"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/ScanPage.tsx",
+          "operation": "modify",
+          "description": "Refactor state management to support an input mode toggle (camera vs file). Add a state variable to track the current input mode. Ensure both camera capture and file import trigger the same workflow progression through edit, enhance, and collect steps. Maintain the existing page collection state so users can switch input methods between pages without losing previously captured documents. Update the UI to show the appropriate input component based on the selected mode."
+        }
+      ]
+    },
+    {
+      "id": "REQ-12",
+      "summary": "Display appropriate UI affordances that make the file import option discoverable alongside the existing camera capture interface",
+      "acceptanceCriteria": [
+        "File import button or option is clearly visible on the scan page",
+        "UI indicates that users have two ways to add documents (camera or file)",
+        "Design is consistent with the existing DSCAN visual theme",
+        "Mobile and desktop users can easily access the file import feature"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/ScanPage.tsx",
+          "operation": "modify",
+          "description": "Add a toggle or tab interface at the top of the ScanPage that allows users to switch between 'Camera' and 'Import File' modes. Style the toggle consistently with the DSCAN theme using Tailwind classes and design tokens from frontend/src/index.css. Ensure the selected mode is visually highlighted. Make the interface responsive so it works well on both mobile and desktop devices."
+        },
+        {
+          "path": "frontend/src/components/FileImport.tsx",
+          "operation": "modify",
+          "description": "Style the FileImport component to match the visual theme of the CameraCapture component. Use consistent button styles, spacing, and layout. Include an icon or visual indicator that clearly communicates this is for importing files from the device. Reference the workspace file path frontend/public/assets/generated/document-placeholder.dim_200x280.png as a placeholder or background element if needed for visual consistency."
+        }
+      ]
+    }
+  ]
+}

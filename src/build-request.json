@@ -1,0 +1,99 @@
+{
+  "kind": "build_request",
+  "title": "Add local file import option for documents",
+  "projectName": "DSCAN",
+  "priority": "normal",
+  "requirements": [
+    {
+      "id": "REQ-9",
+      "text": "Add a file input component on the ScanPage that allows users to select image files from their local device (supporting common formats: JPEG, PNG, WebP)",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-5"
+        ],
+        "quotes": [
+          "Create a option to add documents from local files"
+        ]
+      },
+      "acceptanceCriteria": [
+        "User can click a button or file input to open their device's file picker",
+        "Component accepts image files in JPEG, PNG, and WebP formats",
+        "Selected file is loaded and displayed in the scan workflow",
+        "File input is accessible from the main scanning interface"
+      ]
+    },
+    {
+      "id": "REQ-10",
+      "text": "Process locally imported image files through the same workflow as camera-captured images, including the ImageEditor step for corner detection and perspective correction",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-5"
+        ],
+        "quotes": [
+          "Create a option to add documents from local files"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Imported files are converted to a data URL or blob that can be passed to ImageEditor",
+        "Edge detection and perspective correction work on imported images",
+        "Users can adjust corner points for imported documents just like camera captures",
+        "Workflow transitions smoothly from file import to image editing"
+      ]
+    },
+    {
+      "id": "REQ-11",
+      "text": "Update the ScanPage state management to handle both camera capture and file import as entry points into the document processing workflow",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-5"
+        ],
+        "quotes": [
+          "Create a option to add documents from local files"
+        ]
+      },
+      "acceptanceCriteria": [
+        "ScanPage supports toggling between camera capture mode and file import mode",
+        "Both entry methods lead to the same subsequent steps (edit, enhance, collect)",
+        "State transitions are consistent regardless of image source",
+        "Users can switch between capture methods without losing their document collection"
+      ]
+    },
+    {
+      "id": "REQ-12",
+      "text": "Display appropriate UI affordances that make the file import option discoverable alongside the existing camera capture interface",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-5"
+        ],
+        "quotes": [
+          "Create a option to add documents from local files"
+        ]
+      },
+      "acceptanceCriteria": [
+        "File import button or option is clearly visible on the scan page",
+        "UI indicates that users have two ways to add documents (camera or file)",
+        "Design is consistent with the existing DSCAN visual theme",
+        "Mobile and desktop users can easily access the file import feature"
+      ]
+    }
+  ],
+  "constraints": [
+    "Do not modify the existing camera capture functionality",
+    "Maintain compatibility with the current document processing pipeline (ImageEditor, ImageEnhancement, PageCollection)",
+    "Keep the backend storage interface unchanged"
+  ],
+  "nonGoals": [
+    "Adding support for PDF file imports",
+    "Batch file upload with multiple file selection",
+    "File format conversion or validation beyond basic image types",
+    "Cloud storage integration or remote file access"
+  ],
+  "imageRequirements": {
+    "required": [],
+    "edits": []
+  }
+}

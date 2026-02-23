@@ -1,0 +1,22 @@
+{
+  "frontend/src/App.tsx": "Main application component that sets up TanStack Router with routes for scanning and library pages, wrapped in a Layout component.",
+  "frontend/src/components/Layout.tsx": "Root layout component providing consistent header with navigation, authentication controls, and footer across all pages.",
+  "frontend/src/pages/ScanPage.tsx": "Main scanning workflow page with tabbed interface for choosing between camera capture and file import modes, orchestrating the complete document scanning pipeline from input to PDF generation.",
+  "frontend/src/pages/LibraryPage.tsx": "Document library page displaying saved documents with search functionality and management options.",
+  "frontend/src/components/CameraCapture.tsx": "Camera interface component using the useCamera hook to capture document photos with preview and error handling.",
+  "frontend/src/components/ImageEditor.tsx": "Interactive editor for adjusting document boundaries with draggable corner points and perspective correction preview.",
+  "frontend/src/components/ImageEnhancement.tsx": "Image enhancement interface with brightness, contrast, and black-and-white filter controls with live preview.",
+  "frontend/src/components/PageCollection.tsx": "Page management component displaying thumbnails with drag-and-drop reordering and delete functionality.",
+  "frontend/src/components/PDFPreview.tsx": "PDF generation and save interface with document naming, download, and backend storage integration.",
+  "frontend/src/components/DocumentCard.tsx": "Individual document card displaying thumbnail with download and delete actions, fixed to avoid naming conflict between Document type and DOM document object.",
+  "frontend/src/components/SearchBar.tsx": "Simple search input component for filtering documents in the library.",
+  "frontend/src/hooks/useQueries.ts": "React Query hooks for all backend operations including listing, searching, adding, and deleting documents.",
+  "frontend/src/hooks/useDocumentCollection.ts": "Local state management hook for managing scanned pages during the scanning workflow.",
+  "frontend/src/hooks/useDocumentLibrary.ts": "Hook combining document queries with search and delete operations for the library page.",
+  "frontend/src/utils/imageProcessing.ts": "Image processing utilities implementing edge detection, corner detection, and perspective transformation algorithms.",
+  "frontend/src/utils/imageFilters.ts": "Canvas-based image filter functions for brightness, contrast, and black-and-white conversion.",
+  "frontend/src/utils/pdfGenerator.ts": "PDF generation utility that creates valid PDF documents from scanned images using manual PDF structure generation without external dependencies.",
+  "frontend/src/index.css": "Global styles with OKLCH color system featuring a professional purple-blue theme for document scanning workflows.",
+  "frontend/tailwind.config.js": "Tailwind configuration with custom colors, typography (Inter font), and design tokens matching the document scanner theme.",
+  "frontend/src/components/FileImport.tsx": "File import component with drag-and-drop support that allows users to select image files (JPEG, PNG, WebP) from their device with validation and error handling."
+}

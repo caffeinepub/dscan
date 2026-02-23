@@ -1,0 +1,135 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectStateVersion": 5,
+  "summary": "Document scanning application with camera integration that converts scanned images to PDF format",
+  "architectural_notes": [
+    "Mobile application requiring camera permissions",
+    "PDF generation capability required",
+    "Image processing for document scanning",
+    "File picker integration for importing local documents"
+  ],
+  "known_issues": [],
+  "isFixRequest": false,
+  "existing_features": [
+    {
+      "id": "feature-implement-camera-capture-interface-that-allows-users-to-take-photos-of-documents-using-their-device-camera",
+      "title": "Implement camera capture interface that allows users to take photos of documents using their device camera",
+      "reqIds": [
+        "REQ-1"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-image-processing-to-detect-document-edges-and-apply-perspective-correction-to-captured-images",
+      "title": "Add image processing to detect document edges and apply perspective correction to captured images",
+      "reqIds": [
+        "REQ-2"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-document-collection-interface-where-users-can-scan-multiple-pages-and-manage-them-before-pdf-creation",
+      "title": "Create document collection interface where users can scan multiple pages and manage them before PDF creation",
+      "reqIds": [
+        "REQ-3"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-pdf-generation-functionality-that-converts-scanned-document-images-into-a-single-pdf-file",
+      "title": "Implement PDF generation functionality that converts scanned document images into a single PDF file",
+      "reqIds": [
+        "REQ-4"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-image-enhancement-options-including-brightness-contrast-and-black-and-white-conversion-filters",
+      "title": "Add image enhancement options including brightness, contrast, and black-and-white conversion filters",
+      "reqIds": [
+        "REQ-5"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-document-library-view-where-users-can-browse-search-and-manage-their-saved-scanned-documents",
+      "title": "Implement document library view where users can browse, search, and manage their saved scanned documents",
+      "reqIds": [
+        "REQ-7"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-design-a-creative-visual-theme-with-a-distinctive-color-palette-modern-typography-and-cohesive-layout-system-that-emphasizes-clarity-and-efficiency-for-document-scanning-workflows",
+      "title": "Design a creative visual theme with a distinctive color palette, modern typography, and cohesive layout system that emphasizes clarity and efficiency for document scanning workflows",
+      "reqIds": [
+        "REQ-8"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-a-file-input-component-on-the-scanpage-that-allows-users-to-select-image-files-from-their-local-device-supporting-common-formats-jpeg-png-webp",
+      "title": "Add a file input component on the ScanPage that allows users to select image files from their local device (supporting common formats: JPEG, PNG, WebP)",
+      "reqIds": [
+        "REQ-9"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-process-locally-imported-image-files-through-the-same-workflow-as-camera-captured-images-including-the-imageeditor-step-for-corner-detection-and-perspective-correction",
+      "title": "Process locally imported image files through the same workflow as camera-captured images, including the ImageEditor step for corner detection and perspective correction",
+      "reqIds": [
+        "REQ-10"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-scanpage-state-management-to-handle-both-camera-capture-and-file-import-as-entry-points-into-the-document-processing-workflow",
+      "title": "Update the ScanPage state management to handle both camera capture and file import as entry points into the document processing workflow",
+      "reqIds": [
+        "REQ-11"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-display-appropriate-ui-affordances-that-make-the-file-import-option-discoverable-alongside-the-existing-camera-capture-interface",
+      "title": "Display appropriate UI affordances that make the file import option discoverable alongside the existing camera capture interface",
+      "reqIds": [
+        "REQ-12"
+      ],
+      "version": 1
+    }
+  ],
+  "new_feature_requests": [
+    {
+      "id": "AR-1",
+      "summary": "Camera integration for document scanning",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-2",
+      "summary": "Convert scanned documents to PDF format",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-8",
+      "summary": "Create backend storage system to save scanned documents and their metadata",
+      "reqIds": [
+        "REQ-6"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "AR-9",
+      "summary": "Add option to import documents from local device files",
+      "reqIds": [],
+      "status": "pending"
+    }
+  ],
+  "gameProjectType": "none",
+  "projectName": "Document Scanner",
+  "clarification_mode": "instant",
+  "clarification_rounds": 0
+}

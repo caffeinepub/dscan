@@ -1,0 +1,87 @@
+{
+  "kind": "feature_evidence_report",
+  "features": [
+    {
+      "featureId": "feature-add-a-file-input-component-on-the-scanpage-that-allows-users-to-select-image-files-from-their-local-device-supporting-common-formats-jpeg-png-webp",
+      "featureTitle": "Add a file input component on the ScanPage that allows users to select image files from their local device (supporting common formats: JPEG, PNG, WebP)",
+      "files": [
+        "frontend/src/components/FileImport.tsx",
+        "frontend/src/pages/ScanPage.tsx"
+      ],
+      "components": [
+        "camera@1.0.0",
+        "blob-storage@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-9"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-process-locally-imported-image-files-through-the-same-workflow-as-camera-captured-images-including-the-imageeditor-step-for-corner-detection-and-perspective-correction",
+      "featureTitle": "Process locally imported image files through the same workflow as camera-captured images, including the ImageEditor step for corner detection and perspective correction",
+      "files": [
+        "frontend/src/pages/ScanPage.tsx"
+      ],
+      "components": [
+        "camera@1.0.0",
+        "blob-storage@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-10"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-update-the-scanpage-state-management-to-handle-both-camera-capture-and-file-import-as-entry-points-into-the-document-processing-workflow",
+      "featureTitle": "Update the ScanPage state management to handle both camera capture and file import as entry points into the document processing workflow",
+      "files": [
+        "frontend/src/pages/ScanPage.tsx"
+      ],
+      "components": [
+        "camera@1.0.0",
+        "blob-storage@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-11"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-display-appropriate-ui-affordances-that-make-the-file-import-option-discoverable-alongside-the-existing-camera-capture-interface",
+      "featureTitle": "Display appropriate UI affordances that make the file import option discoverable alongside the existing camera capture interface",
+      "files": [
+        "frontend/src/components/FileImport.tsx",
+        "frontend/src/pages/ScanPage.tsx"
+      ],
+      "components": [
+        "camera@1.0.0",
+        "blob-storage@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-12"
+      ],
+      "confidence": "high"
+    }
+  ]
+}
